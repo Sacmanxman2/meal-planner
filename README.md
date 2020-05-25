@@ -1,7 +1,8 @@
 # Notes for Meal Planning app
+To be built with Angular on the front-end and ASP.NET (C#) on the back end.
 
 ## Features:
-- User login (with OAuth support)
+- User login (with OAuth support so users can easily log in with facebook/google/etc.)
 - Recipe Management
     - Create your own recipes
     - Import recipe from link (using schema.org recipe type)
@@ -18,6 +19,7 @@
     - Can export list to pdf, email, printer, etc.
 
 ## Potential upcoming features:
+- Smartphone app (as opposed to just a PWA)
 - Freezer meals
 - "My Kitchen" page on which users can specify what equipment they have as well as pantry staples & spices. The program will remind them to check every week or so to make sure they have them when they make the shopping list.
 - Automatic email feature where it'll email the user all the recipes for the day at the beginning of each day on which there's a meal plan. User can of course specify the time the email goes out.
@@ -96,7 +98,9 @@ At the bottom of the page, there's a "Create List" button that goes to the list 
 
 Instead of leftovers, the user can reduce the amount that the recipe makes.
 Users can customize mealtime slots
+
 Templates for:
+
     - Slot configuration (other meals, intermittent fasting, planned snacking, etc.)
     - Meal Combinations (If you like to have bacon with your eggs regularly and don't want to keep adding both every time)
     - Days? (not sure how this would play with the different slots)
