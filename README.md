@@ -33,6 +33,7 @@
 *Logo - Left on desktop - first on hamburger*
 
 *Main App Functionality - Center top on Desktop, second on hamburger*
+
 - Recipes
     - All Recipes
     - Add Recipe
@@ -44,6 +45,7 @@
     - Create List
 
 *Settings & User info - Right on Desktop - third on hamburger*
+
 - Log In
 
 ### All Recipes
@@ -53,6 +55,7 @@ Lists all the recipes the user can make in a grid OR table, with a + button to a
 A form to add a new recipe:
 
 *MVP*:
+
 - Title
 - Description
 - Ingredients list
@@ -66,6 +69,7 @@ A form to add a new recipe:
 - Notes
 
 *Future*:
+
 - Photo Upload
 - Category
 - Estimated cost
@@ -89,6 +93,7 @@ The user can just hit "No Thanks" if they don't want to block out that meal agai
 At the bottom of the page, there's a "Create List" button that goes to the list section and automatically generates a shopping list based on the recipes.
 
 *Future*:
+
 Instead of leftovers, the user can reduce the amount that the recipe makes.
 Users can customize mealtime slots
 Templates for:
@@ -111,6 +116,7 @@ Grid view showing the shopping lists the user has created, with a + button to ad
 - View List
 
 *Future*:
+
 - Sort list by store section
 - User can easily change order of sections
 
