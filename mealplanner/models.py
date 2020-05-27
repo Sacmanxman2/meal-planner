@@ -35,3 +35,54 @@ class Conversion(models.Model):
 
 class Ingredient(models.Model):
     name = models.CharField(max_length=300)
+    created_at = models.DateTimeField(auto_now=True)
+
+
+class Recipe(models.Model):
+    name = models.CharField(max_length=200)
+    description = models.TextField()
+    ingredients = models.ManyToManyField(
+        Ingredient, through='RecipeIngredient')
+    created_at = models.DateTimeField(auto_now=True)
+
+
+class Step(models.Model):
+    recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
+    order = models.IntegerField()
+    description = models.TextField()
+
+
+class RecipeIngredient(models.Model):
+    recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
+    ingredient = models.ForeignKey(Ingredient, on_delete=models.PROTECT)
+    ingredient_amount = models.ForeignKey(
+        Fraction, on_delete=models.PROTECT, null=True)
+    ingredient_unit = models.ForeignKey(
+        Unit, on_delete=models.PROTECT, null=True)
+
+
+class MealPlan(models.Model):
+    name = models.CharField(max_length=200)
+    created_at = models.DateTimeField(auto_now=True)
+
+
+class Meal(models.Model):
+    meal_plan = models.ForeignKey(MealPlan, on_delete=models.CASCADE)
+    date = models.DateField()
+    name = models.CharField(max_length=200)
+    order = models.IntegerField()
+    created_at = models.DateTimeField(auto_now=True)
+
+
+class ShoppingList(models.Model):
+    name = models.CharField(max_length=200)
+    created_at = models.DateTimeField(auto_now=True)
+    ingredients = models.ManyToManyField(
+        Ingredient, through='ShoppingListIngredient')
+
+
+class ShoppingListIngredient(models.Model):
+    shopping_list = models.ForeignKey(ShoppingList, on_delete=models.CASCADE)
+    ingredient = models.ForeignKey(Ingredient, on_delete=models.CASCADE)
+    amount = models.ForeignKey(Fraction, on_delete=models.PROTECT)
+    checked = models.BooleanField(default=False)
