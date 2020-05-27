@@ -1,0 +1,20 @@
+extends ../layouts/layout.pug
+
+block nav-var
+    - var name = "recipes"
+
+block content
+    .container
+        header
+            h1 New/Edit Recipe
+        
+        form(action="")
+            .form-group
+                label(for="recipeName") Recipe Name
+                input.form-control(type="text")
+            .form-group
+                label(for="recipeName") Recipe Description
+                textarea.form-control
+            input(type="submit")
+            
+
