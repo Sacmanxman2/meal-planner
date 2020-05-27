@@ -1,5 +1,5 @@
 # Notes for Meal Planning app
-To be built with Angular on the front-end and ASP.NET (C#) on the back end.
+Using Django for both back and frontend for now, might use Angular, Vue, or React for the front end at some point.
 
 ## Features:
 - User login (with OAuth support so users can easily log in with facebook/google/etc.)
@@ -129,3 +129,24 @@ Grid view showing the shopping lists the user has created, with a + button to ad
 - Easy copy and paste functionality for phones
 - Export list to pdf & email
 - Print list
+
+# Class Structure:
+Ingredient:
+- Name
+
+Recipe:
+- Have many Ingredients
+
+MealPlanSlot:
+- Have many Recipes
+
+MealPlan:
+- Have many MealPlanSlots
+
+ShoppingListItem:
+- 
+
+ShoppingList:
+- Have many ShoppingListItems
+
+Units might be it's own class, not sure. I want the app to know how units can convert between each other for each type (grams to oz to lbs, liters to fluid oz to cups, etc.), so it'll need to know what type of unit it is. This could be a constant multidimensional array, since it's unlikely to be changed much and that'd probably have better performance.
